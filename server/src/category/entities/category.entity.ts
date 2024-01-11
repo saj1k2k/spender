@@ -3,17 +3,17 @@ import {
   CreateDateColumn,
   Entity,
   ManyToOne,
-  PrimaryColumn,
   UpdateDateColumn,
   JoinColumn,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { Transaction } from 'src/transaction/entities/transaction.entity';
 
 @Entity()
 export class Category {
-  @PrimaryColumn({ name: 'category_id' })
+  @PrimaryGeneratedColumn({ name: 'category_id' })
   id: number;
   @Column()
   title: string;
