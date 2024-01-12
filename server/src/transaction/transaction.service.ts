@@ -72,4 +72,22 @@ export class TransactionService {
     if (!transaction) throw new NotFoundException('transaction not found');
     return await this.transactionRepository.delete(id);
   }
+
+  async findAllWithPagination(id: number, page: number, limit: number) {
+    const transactions = await this.transactionRepository.find({
+      where: {
+        user: { id },
+      },
+      relations: {
+        category: true,
+        user: true,
+      },
+      order: {
+        createdAt: 'DESC',
+      },
+      take: limit,
+      skip: (page - 1) * limit,
+    });
+    return transactions;
+  }
 }
