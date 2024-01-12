@@ -17,7 +17,7 @@ export class Transaction {
   @Column()
   amount: number;
   @Column()
-  title: number;
+  title: string;
   @Column({ nullable: true })
   type: string;
 
