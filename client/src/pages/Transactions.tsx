@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Transactions: FC = () => {
-  return <div></div>;
+  return <div>Transactions</div>;
 };
 
 export default Transactions;
