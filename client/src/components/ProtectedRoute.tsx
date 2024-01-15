@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useAuth } from "../hooks/useAuth";
-import img from "../../public/shield-with-lock-svgrepo-com.svg";
+import img from "/shield-with-lock-svgrepo-com.svg";
 interface Props {
   children: JSX.Element;
 }

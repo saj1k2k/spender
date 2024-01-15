@@ -21,10 +21,10 @@ export class AuthorGuard implements CanActivate {
 
     switch (type) {
       case 'transaction':
-        entity = await this.transactionService.findAll(id);
+        entity = await this.transactionService.findOne(id);
         break;
       case 'category':
-        entity = await this.categoryService.findAll(id);
+        entity = await this.categoryService.findOne(id);
         break;
       default:
         throw new NotFoundException('Something went wrong...');
@@ -34,6 +34,6 @@ export class AuthorGuard implements CanActivate {
     if (entity && user && entity.user.id === user.id) {
       return true;
     }
-    throw new BadRequestException('something went wrong');
+    throw new BadRequestException('something went wrongadad');
   }
 }
