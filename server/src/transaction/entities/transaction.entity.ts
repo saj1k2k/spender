@@ -21,7 +21,9 @@ export class Transaction {
   @Column({ nullable: true })
   type: string;
 
-  @ManyToOne(() => Category, (category) => category.transactions)
+  @ManyToOne(() => Category, (category) => category.transactions, {
+    onDelete: 'SET NULL',
+  })
   @JoinColumn({ name: 'category_id' })
   category: Category;
   @ManyToOne(() => User, (user) => user.transactions)
